@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Bot, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
   return (
@@ -54,12 +55,14 @@ export const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <Button variant="hero" className="group">
-              Book a Free Demo
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button variant="hero" className="group" asChild>
+              <Link to="/book-demo">
+                Book a Free Demo
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
-            <Button variant="heroOutline">
-              Learn More
+            <Button variant="heroOutline" asChild>
+              <a href="#services">Learn More</a>
             </Button>
           </motion.div>
 
