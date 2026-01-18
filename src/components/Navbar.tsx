@@ -2,13 +2,16 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { name: "Home", href: "#home" },
   { name: "Services", href: "#services" },
+  { name: "Portfolio", href: "#portfolio" },
   { name: "How It Works", href: "#how-it-works" },
   { name: "Benefits", href: "#benefits" },
   { name: "About", href: "#about" },
+  { name: "Testimonials", href: "#testimonials" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -46,8 +49,8 @@ export const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="gradient" size="sm">
-              Book a Demo
+            <Button variant="gradient" size="sm" asChild>
+              <Link to="/book-demo">Book a Demo</Link>
             </Button>
           </div>
 
@@ -82,8 +85,8 @@ export const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button variant="gradient" size="sm" className="w-full mt-2">
-                Book a Demo
+              <Button variant="gradient" size="sm" className="w-full mt-2" asChild>
+                <Link to="/book-demo" onClick={() => setIsOpen(false)}>Book a Demo</Link>
               </Button>
             </div>
           </motion.div>

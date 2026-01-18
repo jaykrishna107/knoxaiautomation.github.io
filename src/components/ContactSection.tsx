@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 export const ContactSection = () => {
   return (
@@ -31,25 +32,27 @@ export const ContactSection = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                <Button variant="hero" className="group">
-                  Book a Free Demo
-                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <Button variant="hero" className="group" asChild>
+                  <Link to="/book-demo">
+                    Book a Free Demo
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </Link>
                 </Button>
-                <Button variant="heroOutline">
-                  Get in Touch
+                <Button variant="heroOutline" asChild>
+                  <a href="mailto:knoxaiautomation@gmail.com">Get in Touch</a>
                 </Button>
               </div>
 
               {/* Contact info */}
               <div className="grid sm:grid-cols-3 gap-6 pt-8 border-t border-border/50">
-                <div className="flex items-center justify-center gap-3 text-muted-foreground">
+                <a href="mailto:knoxaiautomation@gmail.com" className="flex items-center justify-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
                   <Mail className="w-5 h-5 text-primary" />
-                  <span className="text-sm">hello@knoxai.com</span>
-                </div>
-                <div className="flex items-center justify-center gap-3 text-muted-foreground">
+                  <span className="text-sm">knoxaiautomation@gmail.com</span>
+                </a>
+                <a href="tel:+919966191105" className="flex items-center justify-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
                   <Phone className="w-5 h-5 text-primary" />
-                  <span className="text-sm">(555) 123-4567</span>
-                </div>
+                  <span className="text-sm">+91 9966191105</span>
+                </a>
                 <div className="flex items-center justify-center gap-3 text-muted-foreground">
                   <MapPin className="w-5 h-5 text-primary" />
                   <span className="text-sm">Remote-First</span>

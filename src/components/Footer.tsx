@@ -1,4 +1,5 @@
-import { Bot } from "lucide-react";
+import { Bot, Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   services: [
@@ -9,6 +10,8 @@ const footerLinks = {
   ],
   company: [
     { name: "About Us", href: "#about" },
+    { name: "Portfolio", href: "#portfolio" },
+    { name: "Testimonials", href: "#testimonials" },
     { name: "How It Works", href: "#how-it-works" },
     { name: "Contact", href: "#contact" },
   ],
@@ -33,11 +36,21 @@ export const Footer = () => {
             <p className="text-sm text-muted-foreground mb-4">
               Empowering businesses with intelligent AI automation solutions.
             </p>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Bot className="w-4 h-4 text-primary" />
-              </div>
-              <span className="text-xs text-muted-foreground">AI-Powered</span>
+            <div className="space-y-2">
+              <a 
+                href="mailto:knoxaiautomation@gmail.com" 
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Mail className="w-4 h-4 text-primary" />
+                knoxaiautomation@gmail.com
+              </a>
+              <a 
+                href="tel:+919966191105" 
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Phone className="w-4 h-4 text-primary" />
+                +91 9966191105
+              </a>
             </div>
           </div>
 
@@ -72,6 +85,14 @@ export const Footer = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <Link
+                  to="/book-demo"
+                  className="text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                >
+                  Book a Demo
+                </Link>
+              </li>
             </ul>
           </div>
 
